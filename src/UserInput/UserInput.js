@@ -8,7 +8,7 @@ const input = (props) => {
             <input name='inputUsername'
                 type="text" 
                 onChange={props.change}
-                value={props.username}
+                value={props.currentUsername}
             />
         </div>
     );
