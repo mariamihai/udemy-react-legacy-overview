@@ -1,0 +1,13 @@
+.Output {
+    width: 90%;
+    margin: 60px auto;
+    border: 1px solid #eee;
+    /* box-shadow: 0 2px 3px #ccc; */
+    box-shadow: 3px 3px rgb(225, 178, 148);
+    padding: 20px;
+    text-align: left;
+}
+
+.Output > * {
+    margin: 15px;
+}
