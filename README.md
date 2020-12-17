@@ -13,8 +13,8 @@ The requirements are:
 3. Inside the ValidationComponent, either output "Text too short" or "Text long enough" depending on the text length (e.g. take 5 as a minimum length)
 4. Create another component (=> CharComponent) and style it as an inline box (=> *display: 'inline-block', padding: '16px', textAlign: 'center', margin: '16ox', border: '1px solid black'*).
 5. Render a list of **CharComponents** where each **CharComponent** receives a different letter of the entered text (in the initial input field) as a prop.
+6. When you click a CharComponent, it should be removed from the entered text.
 
 ### My updates to the assignment
 - I have added another component called **InputComponent** which encapsulates the first requirement.
-- I am displaying the **CharComponents** only when the length of the entered text is bigger than 5.
 - I am not removing the non-alphanumeric characters currently.

@@ -6,6 +6,7 @@ const inputComponent = (props) => {
         <div className="InputComponent">
             <label htmlFor="inputComponentText">Introduce a text:</label>
             <input
+                value={props.value}
                 name="inputComponentText" 
                 type="text" 
                 onChange={props.change}/>
