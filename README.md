@@ -9,3 +9,5 @@ An overview of all the projects involved can be found [here](https://github.com/
 ## Implementation
 The requirements are:
 1. Create an input field (in App component) with a change listener which outputs the length of the entered text below it (e.g. in a paragraph)
+2. Create a new COmponent (=> ValidationComponent) which receives the text length as a prop
+3. Inside the ValidationComponent, either output "Text too short" or "Text long enough" depending on the text length (e.g. take 5 as a minimum length)
