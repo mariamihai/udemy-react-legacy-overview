@@ -68,10 +68,22 @@ class App extends Component {
       );
     }
 
+    const paragraphClasses = [];
+    // Paragraph will be red if there are at most 2 persons
+    if(this.state.persons.length <= 2) {
+      paragraphClasses.push('red');
+    }
+    // Paragraph will be bold if there is at most 1 persons
+    if(this.state.persons.length <= 1) {
+      paragraphClasses.push('bold');
+    }
+    console.log(paragraphClasses);
+  
+
     return (
       <div className="App">
         <h1>Hi, I'm a React App.</h1>
-        <p>I am a paragraph.</p>
+        <p className={paragraphClasses.join( ' ' )}>I am a paragraph.</p>
  
         <button onClick={this.togglePersonsHandler} style={style}>
           Toggle persons
