@@ -1,7 +1,7 @@
 import React from 'react';
-import './ValidationComponent.css';
+import './Validation.css';
 
-const validationComponent = (props) => {
+const validation = (props) => {
     let textMessage = (
         <p className="error">Text too short (should have minimum 5 characters).</p>
     );
@@ -13,10 +13,10 @@ const validationComponent = (props) => {
     }
 
     return (
-        <div className="ValidationComponent">
+        <div className="Validation">
             {textMessage}
         </div>
     );
 };
 
-export default validationComponent;
+export default validation;

@@ -1,27 +1,24 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import InputComponent from './InputComponent/InputComponent';
-import ValidationComponent from './ValidationComponent/ValidationComponent';
-import CharComponent from './CharComponent/CharComponent';
+import Input from './Input/Input';
+import Validation from './Validation/Validation';
+import Char from './Char/Char';
 
 class App extends Component {
   state = {
     text: "",
-    splittedString: [],
-    length: 0
+    splittedString: []
   }
 
   changedLengthHandler = (event) => {
     const text = event.target.value;
-    const length = event.target.value.length;
 
     let splittedString = text.split("");
 
     this.setState({
       text: text,
-      splittedString: splittedString,
-      length: length
+      splittedString: splittedString
     });
   }
 
@@ -30,12 +27,10 @@ class App extends Component {
     splittedString.splice(index, 1);
 
     const text = splittedString.join("");
-    const length = text.length;
 
     this.setState({
       text: text,
-      splittedString: splittedString,
-      length: length
+      splittedString: splittedString
     });
   }
 
@@ -46,7 +41,7 @@ class App extends Component {
     chars = (
       <div>
         {this.state.splittedString.map((ch, index) => {
-          return <CharComponent char={ch}
+          return <Char char={ch}
                     key={index}
                     click={(event) => this.deleteChar(event, index)}/>
         })}
@@ -55,13 +50,13 @@ class App extends Component {
 
     return (
       <div className="App">
-        <InputComponent 
-          inputLength={this.state.length}
+        <Input
+          inputLength={this.state.text.length}
           value={this.state.text}
           change={this.changedLengthHandler}
         />
-        <ValidationComponent 
-          inputLength={this.state.length}
+        <Validation 
+          inputLength={this.state.text.length}
         />
         {chars}
       </div>

@@ -1,13 +1,13 @@
 import React from 'react';
-import './InputComponent.css';
+import './Input.css';
 
-const inputComponent = (props) => {
+const input = (props) => {
     return (
-        <div className="InputComponent">
-            <label htmlFor="inputComponentText">Introduce a text:</label>
+        <div className="Input">
+            <label htmlFor="inputText">Introduce a text:</label>
             <input
                 value={props.value}
-                name="inputComponentText" 
+                name="inputText" 
                 type="text" 
                 onChange={props.change}/>
             <p>The length of the provided text is {props.inputLength}.</p>
@@ -15,4 +15,4 @@ const inputComponent = (props) => {
     );
 };
 
-export default inputComponent;
+export default input;
