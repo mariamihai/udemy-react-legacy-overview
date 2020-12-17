@@ -14,36 +14,28 @@ class App extends Component {
   changedLengthHandler = (event) => {
     const text = event.target.value;
 
-    let splittedString = text.split("");
-
     this.setState({
-      text: text,
-      splittedString: splittedString
+      text: text
     });
   }
 
-  deleteChar = (event, index) => {
-    let splittedString = [ ...this.state.splittedString];
+  deleteCharHandler = (index) => {
+    let splittedString = this.state.text.split('');
     splittedString.splice(index, 1);
 
-    const text = splittedString.join("");
+    const updatedText = splittedString.join("");
 
-    this.setState({
-      text: text,
-      splittedString: splittedString
-    });
+    this.setState({ text: updatedText });
   }
 
 
   render() {
-    let chars = null;
-
-    chars = (
+    const charList = (
       <div>
-        {this.state.splittedString.map((ch, index) => {
+        {this.state.text.split('').map((ch, index) => {
           return <Char char={ch}
                     key={index}
-                    click={(event) => this.deleteChar(event, index)}/>
+                    click={() => this.deleteCharHandler(index)}/>
         })}
       </div>
     );
@@ -58,7 +50,7 @@ class App extends Component {
         <Validation 
           inputLength={this.state.text.length}
         />
-        {chars}
+        {charList}
       </div>
     );
   }

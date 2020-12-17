@@ -13,7 +13,7 @@ const validation = (props) => {
     }
 
     return (
-        <div className="Validation">
+        <div>
             {textMessage}
         </div>
     );
