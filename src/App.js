@@ -1,17 +1,26 @@
 import React, { Component } from 'react';
 import './App.css';
 
+import InputComponent from './InputComponent/InputComponent';
+
 class App extends Component {
+  state = {
+    text: "",
+    length: 0
+  }
+
+  changedLengthHandler = (event) => {
+    const length = event.target.value.length;
+
+    this.setState({length: length});
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <InputComponent 
+          inputLength={this.state.length}
+          change={this.changedLengthHandler}/>
       </div>
     );
   }
