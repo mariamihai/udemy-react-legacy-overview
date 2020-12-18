@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import classes from './App.css';
 import Person from './Person/Person';
 
 
@@ -42,8 +42,9 @@ class App extends Component {
   }
 
   render() {
-
     let persons = null;
+    let btnClasses = [classes.Button];
+
     if(this.state.showPersons) {
       persons = (
         <div>
@@ -57,24 +58,26 @@ class App extends Component {
           })}
         </div>
       );
+      
+      btnClasses.push(classes.Red);
     }
 
     const paragraphClasses = [];
     // Paragraph will be red if there are at most 2 persons
     if(this.state.persons.length <= 2) {
-      paragraphClasses.push('red');
+      paragraphClasses.push(classes.red);
     }
     // Paragraph will be bold if there is at most 1 persons
     if(this.state.persons.length <= 1) {
-      paragraphClasses.push('bold');
+      paragraphClasses.push(classes.bold);
     }
 
     return (
-      <div className="App">
+      <div className={classes.App}>
         <h1>Hi, I'm a React App.</h1>
         <p className={paragraphClasses.join( ' ' )}>I am a paragraph.</p>
 
-        <button className='button' onClick={this.togglePersonsHandler}>
+        <button className={btnClasses.join(' ')} onClick={this.togglePersonsHandler}>
           Toggle persons
         </button>
 
