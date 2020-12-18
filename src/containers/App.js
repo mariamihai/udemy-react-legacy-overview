@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import classes from './App.css';
-import Person from '../components/Persons/Person/Person';
+import Persons from '../components/Persons/Persons';
+import Cockpit from '../components/Cockpit/Cockpit';
 
 class App extends Component {
   state = {
     persons: [
-      {id: 'aadsag', name : "Max", age : 28},
-      {id: 'fdghdg', name : "Manu", age : 29},
-      {id: 'afssfs', name : "Stephanie", age : 26}
+      { id: 'aadsag', name: "Max", age: 28 },
+      { id: 'fdghdg', name: "Manu", age: 29 },
+      { id: 'afssfs', name: "Stephanie", age: 26 }
     ],
     otherState: 'some other value',
     showPersons: false
@@ -20,65 +21,44 @@ class App extends Component {
     const person = { ...this.state.persons[personIndex] }
     person.name = event.target.value;
 
-    const persons = [ ...this.state.persons ];
+    const persons = [...this.state.persons];
     persons[personIndex] = person;
 
-    this.setState({persons: persons});
+    this.setState({ persons: persons });
   }
-  
-  deletePersonsHandler = (personIndex) => {
-      // const persons = this.state.persons.slice();
-      const persons = [...this.state.persons];
-      persons.splice(personIndex, 1);
 
-      this.setState({persons: persons});
+  deletePersonsHandler = (personIndex) => {
+    // const persons = this.state.persons.slice();
+    const persons = [...this.state.persons];
+    persons.splice(personIndex, 1);
+
+    this.setState({ persons: persons });
   }
 
   togglePersonsHandler = () => {
     const doesShow = this.state.showPersons;
 
-    this.setState({showPersons: !doesShow});
+    this.setState({ showPersons: !doesShow });
   }
 
   render() {
     let persons = null;
-    let btnClasses = [classes.Button];
 
-    if(this.state.showPersons) {
-      persons = (
-        <div>
-          {this.state.persons.map((person, index) => {
-            return <Person 
-              click={() => this.deletePersonsHandler(index)}
-              change={(event) => this.nameChangedHandler(event, person.id)}
-              name={person.name} 
-              age={person.age}
-              key={person.id}/>
-          })}
-        </div>
-      );
-      
-      btnClasses.push(classes.Red);
-    }
-
-    const paragraphClasses = [];
-    // Paragraph will be red if there are at most 2 persons
-    if(this.state.persons.length <= 2) {
-      paragraphClasses.push(classes.red);
-    }
-    // Paragraph will be bold if there is at most 1 persons
-    if(this.state.persons.length <= 1) {
-      paragraphClasses.push(classes.bold);
+    if (this.state.showPersons) {
+      persons =
+        <Persons persons={this.state.persons}
+          click={this.deletePersonsHandler}
+          change={this.nameChangedHandler}
+        />
     }
 
     return (
       <div className={classes.App}>
-        <h1>Hi, I'm a React App.</h1>
-        <p className={paragraphClasses.join( ' ' )}>I am a paragraph.</p>
-
-        <button className={btnClasses.join(' ')} onClick={this.togglePersonsHandler}>
-          Toggle persons
-        </button>
+        <Cockpit
+          showPersons={this.state.showPersons}
+          personsLength={this.state.persons.length}
+          click={this.togglePersonsHandler}
+        />
 
         {persons}
       </div>
