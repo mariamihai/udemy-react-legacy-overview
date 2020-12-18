@@ -3,11 +3,11 @@ import './App.css';
 import Person from './Person/Person';
 
 const appWithHooks = (props) => {
-  const [ personsState, setPersonsState] = useState({
+  const [personsState, setPersonsState] = useState({
     persons: [
-      {name : "Max", age : 28},
-      {name : "Manu", age : 29},
-      {name : "Stephanie", age : 26}
+      { name: "Max", age: 28 },
+      { name: "Manu", age: 29 },
+      { name: "Stephanie", age: 26 }
     ]
   });
 
@@ -16,9 +16,9 @@ const appWithHooks = (props) => {
   const switchNameHandler = () => {
     setPersonsState({
       persons: [
-        {name : "Maximilian", age : 28},
-        {name : "Manu", age : 29},
-        {name : "Stephanie", age : 27}
+        { name: "Maximilian", age: 28 },
+        { name: "Manu", age: 29 },
+        { name: "Stephanie", age: 27 }
       ]
     })
   }
@@ -30,18 +30,18 @@ const appWithHooks = (props) => {
 
       <button onClick={switchNameHandler}>Switch name</button>
 
-      <Person 
-        name={personsState.persons[0].name} 
-        age={personsState.persons[0].age}/>
-      <Person 
-        name={personsState.persons[1].name} 
+      <Person
+        name={personsState.persons[0].name}
+        age={personsState.persons[0].age} />
+      <Person
+        name={personsState.persons[1].name}
         age={personsState.persons[1].age}
       >
         My Hobbies: racing
       </Person>
-      <Person 
-        name={personsState.persons[2].name} 
-        age={personsState.persons[2].age}/>
+      <Person
+        name={personsState.persons[2].name}
+        age={personsState.persons[2].age} />
     </div>
   );
 }
