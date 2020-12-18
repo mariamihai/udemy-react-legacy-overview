@@ -20,7 +20,7 @@
 }
 
 .Button:hover {
-  background-color: green;
+  background-color: lightgreen;
   color: black
 }
 
