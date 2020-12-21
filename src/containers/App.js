@@ -4,6 +4,16 @@ import Persons from '../components/Persons/Persons';
 import Cockpit from '../components/Cockpit/Cockpit';
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+    console.log('[App.js] constructor');
+    // the initial state can be initialized here
+    // this.state = ...
+  }
+
+  // the initialization can be done in constructor
+  // the constructor is added for you here
   state = {
     persons: [
       { id: 'aadsag', name: "Max", age: 28 },
@@ -12,6 +22,11 @@ class App extends Component {
     ],
     otherState: 'some other value',
     showPersons: false
+  }
+
+  static getDerivedStateFromProps(props, state) {
+    console.log('[App.js] getDerivedStateFromProps', props);
+    return state;
   }
 
   nameChangedHandler = (event, id) => {
@@ -41,9 +56,17 @@ class App extends Component {
     this.setState({ showPersons: !doesShow });
   }
 
+  // Legacy - deprecated
+  // componentWillMount() {
+  //   console.log('[App.js] componentWillMount');    
+  // }
+
   render() {
+    console.log('[App.js] render');
+
     let persons = null;
 
+    // the child components are rendered as well
     if (this.state.showPersons) {
       persons =
         <Persons persons={this.state.persons}
@@ -64,6 +87,10 @@ class App extends Component {
         {persons}
       </div>
     );
+  }
+
+  componentDidMount() {
+    console.log('[App.js] componentDidMount');
   }
 }
 
