@@ -6,21 +6,32 @@ const cockpit = ( props ) => {
     useEffect(() => {
         console.log('[Cockpit.js] useEffect');
 
-        setTimeout(() => {
-            alert('Hi!');
-        }, 1000);
+        // Clean up when the component is destroyed by the button in App.js
+        return () => {
+            console.log('[Cockpit.js] cleanup work in useEffect');
+        }
     }, []);
+
+    // Run every time
+    useEffect(() => {
+        console.log('[Cockpit.js] 2nd useEffect');
+
+        // Clean up after each re-render
+        return () => {
+            console.log('[Cockpit.js] cleanup work in 2nd useEffect');
+        }
+    });
+
 
     // This effect has a dependency on persons
     useEffect(() => {
-        console.log('[Cockpit.js] useEffect');
+        console.log('[Cockpit.js] 3rd useEffect');
 
-        setTimeout(() => {
-            alert('Saved data to the cloud.');
-        }, 1000);
-    }, [props.persons]);
-
-    // Can have multiple useEffect()
+        // Clean up after persons is updated
+        return () => {
+            console.log('[Cockpit.js] cleanup work in 3nd useEffect');
+        }
+    } , [props.persons]);
 
     let btnClasses = '';
     if (props.showPersons) {

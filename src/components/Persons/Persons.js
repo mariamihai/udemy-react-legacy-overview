@@ -36,6 +36,10 @@ class Persons extends Component {
         // snapshot is the null value returned by getSnapshotBeforeUpdate
         console.log('[Persons.js] componentDidUpdate');
     }
+
+    componentWillUnmount() {
+        console.log('[Persons.js] componentWillUnmount');    
+    }
 }
 
 export default Persons;
