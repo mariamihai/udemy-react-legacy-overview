@@ -6,13 +6,8 @@ const cockpit = ( props ) => {
     useEffect(() => {
         console.log('[Cockpit.js] useEffect');
 
-        const timer = setTimeout(() => {
-            alert('Hi!');
-        }, 1000);
-
         // Clean up when the component is destroyed by the button in App.js
         return () => {
-            clearTimeout(timer);
             console.log('[Cockpit.js] cleanup work in useEffect');
         }
     }, []);
