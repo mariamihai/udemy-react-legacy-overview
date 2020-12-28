@@ -1,16 +1,41 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Person from './Person/Person';
 
-const persons = (props) => {
-    console.log('[Persons.js] rendering');
+class Persons extends Component {
 
-    return props.persons.map((person, index) => {
-        return <Person
-            click={() => props.click(index)}
-            change={(event) => props.change(event, person.id)}
-            name={person.name}
-            age={person.age}
-            key={person.id} />
-})};
+    // We don't have an initial state
+    // static getDerivedStateFromProps(props, state) {
+    //     console.log('[Persons.js] getDerivedStateFromProps');
+    //     return state;
+    // }
 
-export default persons;
+    shouldComponentUpdate(nextProps, nextState) {
+        console.log('[Persons.js] shouldComponentUpdate');
+        return true;
+    }
+
+    render() {
+        console.log('[Persons.js] rendering');
+
+        return this.props.persons.map((person, index) => {
+            return <Person
+                click={() => this.props.click(index)}
+                change={(event) => this.props.change(event, person.id)}
+                name={person.name}
+                age={person.age}
+                key={person.id} />
+        })
+    }
+
+    getSnapshotBeforeUpdate(prevProps, prevState) {
+        console.log('[Persons.js] getSnapshotBeforeUpdate');
+        return null;
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        // snapshot is the null value returned by getSnapshotBeforeUpdate
+        console.log('[Persons.js] componentDidUpdate');
+    }
+}
+
+export default Persons;
