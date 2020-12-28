@@ -1,40 +1,21 @@
 import React, { Component, Fragment } from 'react';
-// import classes from './Person.css';
-// import Auxiliary from '../../../hoc/Auxiliary';
+import classes from './Person.css';
+import Auxiliary from '../../../hoc/Auxiliary';
+import withClass from '../../../hoc/withClass';
 
 class Person extends Component {
     render() {
         console.log('[Person.js] rendering');
 
-        // return (
-        //     <div className={classes.Person}>
-        //         <p onClick={this.props.click}>I'm {this.props.name} and I am {this.props.age} years old!</p>
-        //         <p>{this.props.children}</p>
-        //         <input type="text" onChange={this.props.change}
-        //             value={this.props.name} />
-        //     </div>
-        // );
-
-        // // Return an array
-        // return [
-        //     <p key='k1' onClick={this.props.click}>I'm {this.props.name} and I am {this.props.age} years old!</p>,
-        //     <p key='k2'>{this.props.children}</p>,
-        //     <input key='k3' type="text" onChange={this.props.change}
-        //         value={this.props.name} />
-        // ];
-
-        // Use a higher order component
         return (
-            // <Auxiliary>
-            // <React.Fragment>
-            <Fragment>
+            <Auxiliary>
                 <p key='k1' onClick={this.props.click}>I'm {this.props.name} and I am {this.props.age} years old!</p>
                 <p key='k2'>{this.props.children}</p>
                 <input key='k3' type="text" onChange={this.props.change}
                     value={this.props.name} />
-            </Fragment>
+            </Auxiliary>
         );
     }
 }
 
-export default Person;
+export default withClass(Person, classes.Person);
