@@ -29,6 +29,11 @@ class App extends Component {
     return state;
   }
 
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log('[App.js] shouldComponentUpdate');
+    return true;
+  }
+
   nameChangedHandler = (event, id) => {
     const personIndex = this.state.persons.findIndex(p => id === p.id);
 
@@ -55,11 +60,6 @@ class App extends Component {
 
     this.setState({ showPersons: !doesShow });
   }
-
-  // Legacy - deprecated
-  // componentWillMount() {
-  //   console.log('[App.js] componentWillMount');    
-  // }
 
   render() {
     console.log('[App.js] render');
@@ -91,6 +91,10 @@ class App extends Component {
 
   componentDidMount() {
     console.log('[App.js] componentDidMount');
+  }
+
+  componentDidUpdate() {
+    console.log('[App.js] componentDidUpdate');
   }
 }
 
