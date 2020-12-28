@@ -22,16 +22,15 @@ const cockpit = ( props ) => {
         }
     });
 
+    // // This effect has a dependency on persons
+    // useEffect(() => {
+    //     console.log('[Cockpit.js] 3rd useEffect');
 
-    // This effect has a dependency on persons
-    useEffect(() => {
-        console.log('[Cockpit.js] 3rd useEffect');
-
-        // Clean up after persons is updated
-        return () => {
-            console.log('[Cockpit.js] cleanup work in 3nd useEffect');
-        }
-    } , [props.persons]);
+    //     // Clean up after persons is updated
+    //     return () => {
+    //         console.log('[Cockpit.js] cleanup work in 3nd useEffect');
+    //     }
+    // } , [props.persons]);
 
     let btnClasses = '';
     if (props.showPersons) {
@@ -40,11 +39,11 @@ const cockpit = ( props ) => {
 
     const paragraphClasses = [];
     // Paragraph will be red if there are at most 2 persons
-    if (props.persons.length <= 2) {
+    if (props.personsLength <= 2) {
         paragraphClasses.push(classes.red);
     }
     // Paragraph will be bold if there is at most 1 persons
-    if (props.persons.length <= 1) {
+    if (props.personsLength <= 1) {
         paragraphClasses.push(classes.bold);
     }
 
@@ -61,4 +60,4 @@ const cockpit = ( props ) => {
     );
 };
 
-export default cockpit;
+export default React.memo(cockpit);
