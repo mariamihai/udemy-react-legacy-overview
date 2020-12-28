@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import Person from './Person/Person';
 
 class Persons extends PureComponent {
@@ -43,6 +44,12 @@ class Persons extends PureComponent {
     componentWillUnmount() {
         console.log('[Persons.js] componentWillUnmount');
     }
+}
+
+Persons.propTypes = {
+    persons: PropTypes.array,
+    click: PropTypes.func,
+    change: PropTypes.func
 }
 
 export default Persons;

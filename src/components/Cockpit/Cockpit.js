@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import classes from './Cockpit.css';
 
 const cockpit = ( props ) => {
@@ -59,5 +60,12 @@ const cockpit = ( props ) => {
         </div>
     );
 };
+
+cockpit.propTypes = {
+    showPersons: PropTypes.bool,
+    personsLength: PropTypes.number,
+    title: PropTypes.string,
+    click: PropTypes.func
+}
 
 export default React.memo(cockpit);
