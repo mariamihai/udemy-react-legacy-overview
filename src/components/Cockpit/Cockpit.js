@@ -1,11 +1,16 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import classes from './Cockpit.css';
 
-const cockpit = ( props ) => {
+const cockpit = (props) => {
+
+    const toggleButtonRef = useRef(null);
+
     // This effect has no dependency and runs only once
     useEffect(() => {
         console.log('[Cockpit.js] useEffect');
+
+        toggleButtonRef.current.click();
 
         // Clean up when the component is destroyed by the button in App.js
         return () => {
@@ -53,7 +58,9 @@ const cockpit = ( props ) => {
             <h1>{props.title}</h1>
             <p className={paragraphClasses.join(' ')}>I am a paragraph.</p>
 
-            <button className={btnClasses}
+            <button
+                ref={toggleButtonRef}
+                className={btnClasses}
                 onClick={props.click}>
                 Toggle persons
             </button>
