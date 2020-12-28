@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import classes from './Person.css';
-import Auxiliary from '../../../hoc/Auxiliary';
+import React, { Component, Fragment } from 'react';
+// import classes from './Person.css';
+// import Auxiliary from '../../../hoc/Auxiliary';
 
 class Person extends Component {
     render() {
@@ -25,12 +25,14 @@ class Person extends Component {
 
         // Use a higher order component
         return (
-            <Auxiliary>
+            // <Auxiliary>
+            // <React.Fragment>
+            <Fragment>
                 <p key='k1' onClick={this.props.click}>I'm {this.props.name} and I am {this.props.age} years old!</p>
                 <p key='k2'>{this.props.children}</p>
                 <input key='k3' type="text" onChange={this.props.change}
                     value={this.props.name} />
-            </Auxiliary>
+            </Fragment>
         );
     }
 }
