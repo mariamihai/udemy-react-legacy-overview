@@ -6,6 +6,11 @@ import Auxiliary from '../../../hoc/Auxiliary';
 import withClass from '../../../hoc/withClass';
 
 class Person extends Component {
+    constructor(props) {
+        super(props);
+
+        this.inputElementRef = React.createRef();
+    }
 
     render() {
         console.log('[Person.js] rendering');
@@ -16,7 +21,7 @@ class Person extends Component {
                 <p key='k2'>{this.props.children}</p>
                 <input
                     key='k3'
-                    ref={(element) => {this.inputElement = element}}
+                    ref={this.inputElementRef}
                     type="text"
                     onChange={this.props.change}
                     value={this.props.name} />
@@ -25,7 +30,7 @@ class Person extends Component {
     }
 
     componentDidMount() {
-        this.inputElement.focus();
+        this.inputElementRef.current.focus();
     }
 }
 
