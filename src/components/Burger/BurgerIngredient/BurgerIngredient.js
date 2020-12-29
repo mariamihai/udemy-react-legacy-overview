@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import styles from './BurgerIngredient.module.css';
 
@@ -35,6 +36,11 @@ const burgerIngredient = (props) => {
     }
 
     return ingredient;
+}
+
+burgerIngredient.propTypes = {
+    type: PropTypes.string.isRequired
+    // type: PropTypes.oneOf(['bread-bottom', 'bread-top', 'meat', 'cheese', 'salad', 'bacon'])
 }
 
 export default burgerIngredient;
