@@ -8,10 +8,6 @@ import styles from './Layout.module.css';
 const layout = (props) => (
     <Auxiliary>
         <Toolbar />
-        <div>
-
-            SideDrawer, Backdrop
-        </div>
 
         <main className={styles.Content}>
             {props.children}
