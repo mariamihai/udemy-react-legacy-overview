@@ -3,7 +3,8 @@ import React from 'react';
 import styles from './Post.module.css';
 
 const post = (props) => (
-    <article className={styles.Post}>
+    <article className={styles.Post}
+        onClick={props.click}>
         <h1>{props.title}</h1>
 
         <div className={styles.Info}>

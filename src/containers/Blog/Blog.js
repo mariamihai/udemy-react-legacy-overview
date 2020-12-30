@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from 'react';
-
 import axios from 'axios';
 
 import Post from '../../components/Post/Post';
@@ -10,7 +9,8 @@ import styles from './Blog.module.css';
 
 class Blog extends Component {
     state = {
-        posts: []
+        posts: [],
+        selectedPostId: null
     }
 
     componentDidMount() {
@@ -28,10 +28,16 @@ class Blog extends Component {
             });
     }
 
+    showPostHandler = (postId) => {
+        this.setState({ selectedPostId: postId });
+    }
 
     render() {
         const posts = this.state.posts.map(post => (
-            <Post key={post.id} title={post.title} author={post.author}/>
+            <Post key={post.id}
+                title={post.title}
+                author={post.author}
+                click={() => this.showPostHandler(post.id)} />
         ));
 
         return (
@@ -41,7 +47,8 @@ class Blog extends Component {
                 </section>
 
                 <section>
-                    <FullPost />
+                    <FullPost
+                        id={this.state.selectedPostId} />
                 </section>
 
                 <section>
