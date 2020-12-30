@@ -2,9 +2,9 @@ import React from 'react';
 
 import styles from './Post.module.css';
 
-const post = () => (
+const post = (props) => (
     <article className={styles.Post}>
-        <h1> Title</h1>
+        <h1>{props.title}</h1>
 
         <div className={styles.Info}>
             <div className={styles.Author}>Author</div>
