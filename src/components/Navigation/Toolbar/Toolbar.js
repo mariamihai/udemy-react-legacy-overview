@@ -7,7 +7,7 @@ import styles from "./Toolbar.module.css";
 
 const toolbar = (props) => (
     <header className={styles.Toolbar}>
-        <div>MENU</div>
+        <div onClick={props.openSideDrawer}>MENU</div>
 
         <div className={styles.Logo}>
             <Logo />
