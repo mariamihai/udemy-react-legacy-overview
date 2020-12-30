@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import NavigationItems from '../NavigationItems/NavigationItems';
 import DrawerToggle from '../SideDrawer/DrawerToggle/DrawerToggle';
@@ -19,5 +20,9 @@ const toolbar = (props) => (
         </nav>
     </header>
 );
+
+toolbar.propTypes = {
+    drawerToggleClick: PropTypes.func
+}
 
 export default toolbar;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Auxiliary from '../../../hoc/Auxiliary';
 import Button from '../../UI/Button/Button';
@@ -28,6 +29,13 @@ const orderSummary = (props) => {
             <Button btnType='Danger' click={props.clickContinue}>CONTINUE</Button>
         </Auxiliary>
     );
+}
+
+orderSummary.propTypes = {
+    ingredients: PropTypes.objectOf(PropTypes.number),
+    totalPrice: PropTypes.number,
+    clickContinue: PropTypes.func,
+    clickCancel: PropTypes.func
 }
 
 export default orderSummary;

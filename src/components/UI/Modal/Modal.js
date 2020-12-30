@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import styles from "./Modal.module.css";
 
@@ -22,5 +23,10 @@ const modal = (props) => (
         </div>
     </Auxiliary>
 )
+
+modal.propTypes = {
+    show: PropTypes.bool,
+    modalClose: PropTypes.func
+}
 
 export default modal;

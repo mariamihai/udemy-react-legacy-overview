@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import NavigationItems from '../NavigationItems/NavigationItems';
 import Logo from '../../Logo/Logo';
@@ -10,13 +11,12 @@ import styles from './SideDrawer.module.css';
 
 const sideDrawer = (props) => {
     let attachStyles = [styles.SideDrawer, styles.Close];
-    if(props.showSideDrawer) {
+    if (props.showSideDrawer) {
         attachStyles = [styles.SideDrawer, styles.Open];
     }
 
     return (
         <Auxiliary>
-
             <Backdrop
                 show={props.showSideDrawer}
                 click={props.closeSideDrawer}
@@ -34,5 +34,10 @@ const sideDrawer = (props) => {
         </Auxiliary>
     );
 };
+
+sideDrawer.propTypes = {
+    showSideDrawer: PropTypes.bool,
+    closeSideDrawer: PropTypes.func
+}
 
 export default sideDrawer;

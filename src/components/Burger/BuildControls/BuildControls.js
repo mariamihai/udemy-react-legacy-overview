@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import BuildControl from "./BuildControl/BuildControl";
 
@@ -30,7 +31,15 @@ const buildControls = (props) => (
             disabled={!props.purchasable}
             onClick={props.ordered}>ORDER NOW</button>
     </div>
-
 );
+
+buildControls.propTypes = {
+    totalPrice: PropTypes.number,
+    disabledInfo: PropTypes.objectOf(PropTypes.bool),
+    ingredientAdded: PropTypes.func,
+    ingredientRemoved: PropTypes.func,
+    purchasable: PropTypes.bool,
+    ordered: PropTypes.func
+}
 
 export default buildControls;

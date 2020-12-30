@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import styles from './DrawerToggle.module.css';
 
@@ -11,5 +12,9 @@ const drawerToggle = (props) => (
         <div></div>
     </div>
 );
+
+drawerToggle.propTypes = {
+    click: PropTypes.func
+}
 
 export default drawerToggle;
