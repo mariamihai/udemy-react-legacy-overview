@@ -1,4 +1,4 @@
-# React Burger Builder
+# Http project
 The current project is part of the "React - The Complete Guide (incl Hooks, React Router, Redux)" [Udemy course](https://www.udemy.com/course/react-the-complete-guide-incl-redux/).
 
 Contains the implementation done for Section 9 - "Reaching out to the Web (Http / Ajax)".
