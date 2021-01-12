@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import Auxiliary from '../../hoc/Auxiliary';
+import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 
 import Burger from '../../components/Burger/Burger';
 import BuildControls from '../../components/Burger/BuildControls/BuildControls';
@@ -93,9 +94,7 @@ class BurgerBuilder extends Component {
         this.setState({ purchasing: false })
     }
 
-    // TODO - will be updated later
     purchaseContinueHandler = () => {
-        // this.setState({ purchasing: false });
         this.setState({ loading: true });
 
         const order = {
@@ -116,11 +115,9 @@ class BurgerBuilder extends Component {
 
         axios.post('/orders.json', order)
             .then(response => {
-                console.log("then", response);
                 this.setState({ loading: false, purchasing: false });
             })
             .catch(error => {
-                console.log("error", error);
                 this.setState({ loading: false, purchasing: false });
             });
 
@@ -142,7 +139,6 @@ class BurgerBuilder extends Component {
             />
         );
         if (this.state.loading) {
-            console.log("Spinner");
             summary = <Spinner />;
         }
 
@@ -170,4 +166,4 @@ class BurgerBuilder extends Component {
     }
 }
 
-export default BurgerBuilder;
+export default withErrorHandler(BurgerBuilder, axios);
