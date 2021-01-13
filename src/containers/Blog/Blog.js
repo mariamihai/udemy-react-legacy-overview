@@ -2,9 +2,10 @@ import React, { Component, Fragment } from 'react';
 // import axios from 'axios';
 import axios from '../../axios';
 
+// TODO - will be refactored
 import Post from '../../components/Post/Post';
-import FullPost from '../../components/FullPost/FullPost';
-import NewPost from '../../components/NewPost/NewPost';
+import FullPost from './FullPost/FullPost';
+import NewPost from './NewPost/NewPost';
 
 import styles from './Blog.module.css';
 
@@ -64,14 +65,14 @@ class Blog extends Component {
                     {posts}
                 </section>
 
-                <section>
+                {/* <section>
                     <FullPost
                         id={this.state.selectedPostId} />
                 </section>
 
                 <section>
                     <NewPost />
-                </section>
+                </section> */}
             </Fragment>
         );
     }

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
 import styles from './NewPost.module.css';
-import axios from 'axios';
+import axios from '../../../axios';
 
-class newPost extends Component {
+class NewPost extends Component {
     state = {
         title: '',
         content: '',
@@ -51,4 +51,4 @@ class newPost extends Component {
     }
 }
 
-export default newPost;
+export default NewPost;
