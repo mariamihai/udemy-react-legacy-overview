@@ -1,5 +1,7 @@
 import React, { Component, Fragment } from 'react';
 
+import { Route } from 'react-router-dom';
+
 import Posts from './Posts/Posts';
 // TODO - will be refactored
 // import Post from '../../components/Post/Post';
@@ -25,7 +27,8 @@ class Blog extends Component {
                     </nav>
                 </header>
 
-                <Posts />
+                <Route path="/" exact render={() => <Posts />} />
+
 
                 {/* <section>
                     <FullPost
