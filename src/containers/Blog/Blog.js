@@ -1,55 +1,19 @@
 import React, { Component, Fragment } from 'react';
-// import axios from 'axios';
-import axios from '../../axios';
 
+import Posts from './Posts/Posts';
 // TODO - will be refactored
-import Post from '../../components/Post/Post';
-import FullPost from './FullPost/FullPost';
-import NewPost from './NewPost/NewPost';
+// import Post from '../../components/Post/Post';
+// import FullPost from './FullPost/FullPost';
+// import NewPost from './NewPost/NewPost';
 
 import styles from './Blog.module.css';
 
 class Blog extends Component {
     state = {
-        posts: [],
-        selectedPostId: null,
-        error: false
-    }
-
-    componentDidMount() {
-        axios.get('/posts')
-            .then(response => {
-                const posts = response.data.slice(0, 4);
-                const updatedPosts = posts.map(post => {
-                    return {
-                        ...post,
-                        author: post.userId % 2 === 0 ? 'Max' : 'Manu'
-                    }
-                });
-
-                this.setState({ posts: updatedPosts });
-            })
-            .catch(error => {
-                this.setState({ error: true });
-            });
-    }
-
-    showPostHandler = (postId) => {
-        this.setState({ selectedPostId: postId });
+        posts: []
     }
 
     render() {
-        let posts = <p style={{ textAlign: 'center' }}>Something went wrong</p>
-
-        if (!this.state.error) {
-            posts = this.state.posts.map(post => (
-                <Post key={post.id}
-                    title={post.title}
-                    author={post.author}
-                    click={() => this.showPostHandler(post.id)} />
-            ));
-        }
-
         return (
             <Fragment>
                 <header className={styles.BlogNav}>
@@ -61,9 +25,7 @@ class Blog extends Component {
                     </nav>
                 </header>
 
-                <section className={styles.Posts}>
-                    {posts}
-                </section>
+                <Posts />
 
                 {/* <section>
                     <FullPost
