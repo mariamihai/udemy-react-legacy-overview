@@ -16,6 +16,8 @@
     color: black;
 }
 
-.BlogNav a:hover, .BlogNav a:active {
+.BlogNav a:hover, 
+.BlogNav a:active, 
+.BlogNav a.active {
     color: #fa923f;
 }
