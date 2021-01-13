@@ -9,4 +9,4 @@ An overview of all the projects involved can be found [here](https://github.com/
 The current project simulates a blog, using axios for GETting, POSTing and DELETing posts.
 
 ## Status
-**[COMPLETED]** - As I finished the assignment, I am setting a personal status of "Completed" and will probably not update this repository in the near future as this was a learning project.
+<del>**[COMPLETED]** - As I finished the assignment, I am setting a personal status of "Completed" and will probably not update this repository in the near future as this was a learning project.</del>
