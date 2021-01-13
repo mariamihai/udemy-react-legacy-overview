@@ -1,13 +1,10 @@
 import React, { Component, Fragment } from 'react';
 
 import { Route, NavLink } from 'react-router-dom';
-import NewPost from './NewPost/NewPost';
 
 import Posts from './Posts/Posts';
-// TODO - will be refactored
-// import Post from '../../components/Post/Post';
-// import FullPost from './FullPost/FullPost';
-
+import FullPost from './FullPost/FullPost';
+import NewPost from './NewPost/NewPost';
 
 import styles from './Blog.module.css';
 
@@ -46,15 +43,12 @@ class Blog extends Component {
 
                 <Route path="/" exact component={Posts} />
                 <Route path="/new-post" exact component={NewPost} />
+                <Route path="/:postId" exact component={FullPost} />
 
 
                 {/* <section>
                     <FullPost
                         id={this.state.selectedPostId} />
-                </section>
-
-                <section>
-                    <NewPost />
                 </section> */}
             </Fragment>
         );
