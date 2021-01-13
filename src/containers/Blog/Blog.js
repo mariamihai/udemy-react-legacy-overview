@@ -51,6 +51,15 @@ class Blog extends Component {
 
         return (
             <Fragment>
+                <header className={styles.BlogNav}>
+                    <nav>
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/new-post">New Post</a></li>
+                        </ul>
+                    </nav>
+                </header>
+
                 <section className={styles.Posts}>
                     {posts}
                 </section>
