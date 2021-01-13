@@ -1,9 +1,7 @@
 import React, { Component, Fragment } from 'react';
-
-import { Route, NavLink, Switch } from 'react-router-dom';
+import { Route, NavLink } from 'react-router-dom';
 
 import Posts from './Posts/Posts';
-import FullPost from './FullPost/FullPost';
 import NewPost from './NewPost/NewPost';
 
 import styles from './Blog.module.css';
@@ -19,13 +17,13 @@ class Blog extends Component {
                 <header className={styles.BlogNav}>
                     <nav>
                         <ul>
-                            <li><NavLink to="/" exact
+                            <li><NavLink to="/posts" exact
                                 activeClassName='highlight'
                                 activeStyle={{
                                     color: '#fa923f',
                                     textDecoration: 'underline'
                                 }}>
-                                Home
+                                Posts
                                 </NavLink>
                             </li>
                             <li><NavLink to={{
@@ -41,11 +39,8 @@ class Blog extends Component {
                     </nav>
                 </header>
 
-                <Route path="/" exact component={Posts} />
-                <Switch>
-                    <Route path="/new-post" exact component={NewPost} />
-                    <Route path="/:postId" exact component={FullPost} />
-                </Switch>
+                <Route path="/posts" component={Posts} />
+                <Route path="/new-post" exact component={NewPost} />
             </Fragment>
         );
     }
