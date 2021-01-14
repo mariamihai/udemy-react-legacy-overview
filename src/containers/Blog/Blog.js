@@ -8,7 +8,7 @@ import styles from './Blog.module.css';
 
 class Blog extends Component {
     state = {
-        posts: []
+        auth: false
     }
 
     render() {
@@ -39,12 +39,10 @@ class Blog extends Component {
 
                 <Switch>
                     <Route path="/posts" component={Posts} />
-                    <Route path="/new-post" exact component={NewPost} />
+                    {this.state.auth ? <Route path="/new-post" exact component={NewPost} /> : null}
 
                     <Redirect from="/" to="/posts" />
-                    {/* <Route path="/" component={Posts} /> */}
                 </Switch>
-                {/* <Redirect to="/posts"/> */}
             </Fragment>
         );
     }
