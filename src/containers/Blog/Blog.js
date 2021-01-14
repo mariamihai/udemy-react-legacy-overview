@@ -7,6 +7,7 @@ import NewPost from './NewPost/NewPost';
 import styles from './Blog.module.css';
 
 class Blog extends Component {
+    
     state = {
         auth: false
     }
@@ -39,9 +40,12 @@ class Blog extends Component {
 
                 <Switch>
                     <Route path="/posts" component={Posts} />
+                    {/* <Route path="/new-post" exact component={NewPost} /> */}
                     {this.state.auth ? <Route path="/new-post" exact component={NewPost} /> : null}
 
-                    <Redirect from="/" to="/posts" />
+                    <Route render={() => <h1>Page not found</h1>} />
+                    {/* Can't be used with the previous route as they both catch all unknown routes. 
+                    <Redirect from="/" to="/posts" /> */}
                 </Switch>
             </Fragment>
         );
