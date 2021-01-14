@@ -1,15 +1,18 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component, Fragment, Suspense } from 'react';
 import { Route, NavLink, Switch } from 'react-router-dom';
 
 import styles from './Blog.module.css';
 
 import Posts from './Posts/Posts';
 // import NewPost from './NewPost/NewPost';
-import asyncComponent from '../../hoc/asyncComponent/asyncComponent';
-const AsyncNewPost = asyncComponent(() => {
+// import asyncComponent from '../../hoc/asyncComponent/asyncComponent';
+// const AsyncNewPost = asyncComponent(() => {
+//     return import('./NewPost/NewPost');
+// });
+
+const AsyncNewNewPost = React.lazy(() => {
     return import('./NewPost/NewPost');
 });
-
 
 class Blog extends Component {
 
@@ -47,7 +50,12 @@ class Blog extends Component {
                     <Route path="/posts" component={Posts} />
                     {/* <Route path="/new-post" exact component={NewPost} /> */}
                     {/* {this.state.auth ? <Route path="/new-post" exact component={NewPost} /> : null} */}
-                    {this.state.auth ? <Route path="/new-post" exact component={AsyncNewPost} /> : null}
+                    {/* {this.state.auth ? <Route path="/new-post" exact component={AsyncNewPost} /> : null} */}
+                    <Route path="/new-post" exact render={() => (
+                        <Suspense fallback={<div>Loading...</div>}>
+                            <AsyncNewNewPost />
+                        </Suspense>
+                    )} />
 
                     <Route render={() => <h1>Page not found</h1>} />
                 </Switch>
