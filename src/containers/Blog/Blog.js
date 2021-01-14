@@ -27,9 +27,7 @@ class Blog extends Component {
                                 </NavLink>
                             </li>
                             <li><NavLink to={{
-                                pathname: '/new-post',
-                                hash: '#submit',
-                                search: '?quick-submit=true'
+                                pathname: '/new-post'
                             }}
                                 activeClassName={styles.active}>
                                 New Post
