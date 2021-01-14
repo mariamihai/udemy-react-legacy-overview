@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Route, NavLink } from 'react-router-dom';
+import { Route, NavLink, Switch, Redirect } from 'react-router-dom';
 
 import Posts from './Posts/Posts';
 import NewPost from './NewPost/NewPost';
@@ -39,8 +39,14 @@ class Blog extends Component {
                     </nav>
                 </header>
 
-                <Route path="/posts" component={Posts} />
-                <Route path="/new-post" exact component={NewPost} />
+                <Switch>
+                    <Route path="/posts" component={Posts} />
+                    <Route path="/new-post" exact component={NewPost} />
+
+                    <Redirect from="/" to="/posts" />
+                    {/* <Route path="/" component={Posts} /> */}
+                </Switch>
+                {/* <Redirect to="/posts"/> */}
             </Fragment>
         );
     }
