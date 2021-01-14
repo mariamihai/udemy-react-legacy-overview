@@ -21,6 +21,11 @@ class NewPost extends Component {
 
         axios.post('/posts/', data)
             .then(response => {
+                // Pushing a new page -> you can go back to "New Post"
+                // this.props.history.push("/props");
+
+                // Redirect replaces the page, doesn't push a new one -> you can't go back to "New Post"
+                // this.props.history.replace("/props"); // or
                 this.setState({ submitted: true });
             });
     }
