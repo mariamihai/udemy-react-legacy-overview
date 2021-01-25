@@ -1,7 +1,7 @@
 # React Assignment 3
 The current project is part of the "React - The Complete Guide (incl Hooks, React Router, Redux)" [Udemy course](https://www.udemy.com/course/react-the-complete-guide-incl-redux/).
 
-The project is my implementation of the second assignment, Section 11: Assignment 3 - Routing.
+The project is my implementation of the second assignment, **Section 11: Assignment 3 - Routing**.
 
 An overview of all the projects involved can be found [here](https://github.com/mariamihai/udemy-react-overview).
 
