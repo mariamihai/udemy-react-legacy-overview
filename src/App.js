@@ -1,6 +1,6 @@
 import './App.css';
 
-import { BrowserRouter, NavLink, Route } from 'react-router-dom';
+import { BrowserRouter, NavLink, Route, Switch, Redirect } from 'react-router-dom';
 
 import Courses from './containers/Courses/Courses';
 import Users from './containers/Users/Users';
@@ -25,8 +25,12 @@ function App() {
       </nav>
 
       <div className="App">
-        <Route path="/users" component={Users} />
-        <Route path="/courses" component={Courses} />
+        <Switch>
+          <Route path="/users" component={Users} />
+          <Route path="/courses" component={Courses} />
+          <Redirect from="/all-courses" to="/courses" />
+          <Route render={() => <h1>Page not found</h1>} />
+        </Switch>
       </div>
     </BrowserRouter>
   );
