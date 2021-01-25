@@ -3,7 +3,6 @@ import './App.css';
 import { BrowserRouter, NavLink, Route } from 'react-router-dom';
 
 import Courses from './containers/Courses/Courses';
-import Course from './containers/Course/Course';
 import Users from './containers/Users/Users';
 
 function App() {
@@ -27,8 +26,7 @@ function App() {
 
       <div className="App">
         <Route path="/users" component={Users} />
-        <Route path="/courses" component={Courses} exact />
-        <Route path="/courses/course/:courseId" component={Course} />
+        <Route path="/courses" component={Courses} />
       </div>
     </BrowserRouter>
   );

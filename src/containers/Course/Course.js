@@ -6,7 +6,7 @@ class Course extends Component {
         let title = '_COURSE_TITLE_';
 
         for (let param of query.entries()) {
-            if(param[0] === 'title') {
+            if (param[0] === 'title') {
                 title = param[1];
             }
         }
