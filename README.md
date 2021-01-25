@@ -15,3 +15,6 @@ The requirements are:
 6. Load the "Course" component as a nested component of "Courses"
 7. Add a 404 error page and render it for any unknown routes
 8. Redirect requests to /all-courses to /courses (=> Your "Courses" page)
+
+## Status
+**[COMPLETED]** - As I finished the assignment, I am setting a personal status of "Completed" and will probably not update this repository in the near future as this was a learning project.
