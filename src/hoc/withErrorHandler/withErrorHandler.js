@@ -12,7 +12,7 @@ const withErrorHandler = (WrappedComponent, axios) => {
             error: null
         }
 
-        // Will be replaced with React Hook later
+        // Will be replaced with a React Hook later
         UNSAFE_componentWillMount() {
             this.requestIntercepter = axios.interceptors.request.use(request => {
                 this.setState({ error: null });
