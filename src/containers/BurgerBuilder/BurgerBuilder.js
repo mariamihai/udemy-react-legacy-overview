@@ -27,7 +27,6 @@ class BurgerBuilder extends Component {
         totalPrice: 4,
         purchasable: true,
         purchasing: false,
-        loading: false,
         error: false
     }
 
@@ -106,35 +105,12 @@ class BurgerBuilder extends Component {
             queryParams.push(encodeURIComponent(i) + "=" + encodeURIComponent(this.state.ingredients[i]));
         }
 
+        queryParams.push('totalPrice=' + this.state.totalPrice);
+
         this.props.history.push({
             pathname: '/checkout',
             search: '?' + queryParams.join('&')
         });
-        // this.setState({ loading: true });
-
-        // const order = {
-        //     ingredients: this.state.ingredients,
-        //     // Should be calculated on the server
-        //     price: this.state.totalPrice,
-        //     customer: {
-        //         name: 'Max',
-        //         address: {
-        //             street: 'Street 1',
-        //             zipCode: '12345',
-        //             country: 'Germany'
-        //         },
-        //         email: 'abc@abc.com'
-        //     },
-        //     deliveryMethod: 'fastest'
-        // }
-
-        // axios.post('/orders.json', order)
-        //     .then(response => {
-        //         this.setState({ loading: false, purchasing: false });
-        //     })
-        //     .catch(error => {
-        //         this.setState({ loading: false, purchasing: false });
-        //     });
     }
 
     render() {
@@ -169,10 +145,6 @@ class BurgerBuilder extends Component {
                     />
                 </Auxiliary>
             );
-        }
-
-        if (this.state.loading) {
-            summary = <Spinner />;
         }
 
         return (
