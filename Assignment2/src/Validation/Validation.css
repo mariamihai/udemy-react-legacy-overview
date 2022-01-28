@@ -1,0 +1,17 @@
+.error,
+.success {
+	border: 1px solid;
+	margin: 10px auto;
+	max-width: 400px;
+	padding: 15px 10px 15px 50px;
+}
+
+.error {
+    color: #D8000C;
+    background-color: #FFD2D2;
+}
+
+.success {
+    color: #4F8A10;
+    background-color: #DFF2BF;
+}
