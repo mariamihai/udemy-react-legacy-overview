@@ -22,15 +22,15 @@ My implementation for Section 9 - "Reaching out to the Web (Http / Ajax)" - [her
 
 ### Assignment 1
 
-The implementation for **Section 3: Assignment 1 - The Base Syntax** can be found [here](https://github.com/mariamihai/udemy-react-assignment1).
+The implementation for **Section 3: Assignment 1 - The Base Syntax** can be found [here](./Assignment1/).
 
 ### Assignment 2
 
-The implementation for **Section 4: Assignment 2 - Lists & Conditionals** can be found [here](https://github.com/mariamihai/udemy-react-assignment2).
+The implementation for **Section 4: Assignment 2 - Lists & Conditionals** can be found [here](./Assignment2/).
 
 ### Assignment 3
 
-The implementation for **Section 11: Assignment 3 - Routing** can be found [here](https://github.com/mariamihai/udemy-react-assignment3).
+The implementation for **Section 11: Assignment 3 - Routing** can be found [here](./Assignment3/).
 
 ## Status
 
