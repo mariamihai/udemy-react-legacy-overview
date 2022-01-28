@@ -2,7 +2,7 @@
 
 Overview of the entire course and all the projects from "React - The Complete Guide (incl Hooks, React Router, Redux)" [Udemy course](https://www.udemy.com/course/react-the-complete-guide-incl-redux/).
 
-The course was redone and the next projects are based on the previous course.
+The course was redone and the next projects are based on the previous course. The new code can be found [here](https://github.com/mariamihai/udemy-react-overview).
 
 ## Main projects
 
