@@ -4,23 +4,32 @@ Overview of the entire course and all the projects from "React - The Complete Gu
 
 The course was redone and the next projects are based on the previous course.
 
+## Main projects
+
 ### React Complete Guide
+
 My implementation of the initial project related to this course can be found [here](./CompleteGuide/).
 
 ### The burger application
+
 My implementation of the main project of the course can be found [here](./BurgerApp/).
 
 ### Http related application
+
 My implementation for Section 9 - "Reaching out to the Web (Http / Ajax)" - [here](./Http/).
 
-### Assignments
-#### Assignment 1
+## Assignments
+
+### Assignment 1
+
 The implementation for **Section 3: Assignment 1 - The Base Syntax** can be found [here](https://github.com/mariamihai/udemy-react-assignment1).
 
-#### Assignment 2
+### Assignment 2
+
 The implementation for **Section 4: Assignment 2 - Lists & Conditionals** can be found [here](https://github.com/mariamihai/udemy-react-assignment2).
 
-#### Assignment 3
+### Assignment 3
+
 The implementation for **Section 11: Assignment 3 - Routing** can be found [here](https://github.com/mariamihai/udemy-react-assignment3).
 
 ## Status
